@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model comments {
+  comment_id     Int       @id @default(autoincrement())
+  user_id        Int?
+  photo_id       Int?
+  comment_date   DateTime? @db.DateTime(0)
+  content        String?   @db.Text
+  comment_status Int?      @db.TinyInt
+  users          users?    @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "comments_ibfk_1")
+  photos         photos?   @relation(fields: [photo_id], references: [photo_id], onDelete: NoAction, onUpdate: NoAction, map: "comments_ibfk_2")
+
+  @@index([photo_id], map: "photo_id")
+  @@index([user_id], map: "user_id")
+}
+
+model photos {
+  photo_id     Int            @id @default(autoincrement())
+  photo_name   String?        @db.VarChar(255)
+  url          String?        @db.VarChar(255)
+  description  String?        @db.Text
+  user_id      Int?
+  photo_status Int            @db.TinyInt
+  comments     comments[]
+  users        users?         @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "photos_ibfk_1")
+  saved_photos saved_photos[]
+
+  @@index([user_id], map: "user_id")
+}
+
+model saved_photos {
+  user_id   Int
+  photo_id  Int
+  save_date DateTime? @db.DateTime(0)
+  users     users     @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "saved_photos_ibfk_1")
+  photos    photos    @relation(fields: [photo_id], references: [photo_id], onDelete: NoAction, onUpdate: NoAction, map: "saved_photos_ibfk_2")
+
+  @@id([user_id, photo_id])
+  @@index([photo_id], map: "photo_id")
+}
+
+model users {
+  user_id       Int            @id @default(autoincrement())
+  email         String         @db.VarChar(255)
+  password      String         @db.VarChar(255)
+  full_name     String?        @db.VarChar(255)
+  age           Int?
+  avatar        String?        @db.VarChar(255)
+  refresh_token String?        @db.Text
+  comments      comments[]
+  photos        photos[]
+  saved_photos  saved_photos[]
+}

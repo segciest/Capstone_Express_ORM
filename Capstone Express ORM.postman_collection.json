@@ -1,0 +1,609 @@
+{
+	"info": {
+		"_postman_id": "930a6b85-85b3-4b08-bfb4-ca5fea16cbd9",
+		"name": "Capstone Express ORM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30584462"
+	},
+	"item": [
+		{
+			"name": "API Get All User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJrZXkiOiJ2a3gwdHYiLCJpYXQiOjE3MTYyODk5NDYsImV4cCI6MTcxNjI5MDI0Nn0.l5pAn4dLxuqUW1CE0UZnKpOGPgCmxNXJJQ3tUKvcA_Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/user/get-all-user",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-all-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Get User By ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJmQmRTVmgiLCJpYXQiOjE3MTYyOTYzMTQsImV4cCI6MTcxNjI5NjYxNH0.SUf02NeX83TVNUazy1k3lR6yZKrQW63zlna36E-mGBs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/user/get-user-by-id/1",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"get-user-by-id",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Get All Photos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJPclBaUWUiLCJpYXQiOjE3MTYyOTkxOTQsImV4cCI6MTcxNjI5OTQ5NH0.fxSiL3tTOOgpt8M6A2bYFG7pa9o56_FauaNxM6oEurE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/photos/get-all-photos",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"photos",
+						"get-all-photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Get Photo By ID Photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJmQmRTVmgiLCJpYXQiOjE3MTYyOTYzMTQsImV4cCI6MTcxNjI5NjYxNH0.SUf02NeX83TVNUazy1k3lR6yZKrQW63zlna36E-mGBs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/photos/get-photo-by-id/2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"photos",
+						"get-photo-by-id",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Search Photo By Name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJPclBaUWUiLCJpYXQiOjE3MTYyOTkxOTQsImV4cCI6MTcxNjI5OTQ5NH0.fxSiL3tTOOgpt8M6A2bYFG7pa9o56_FauaNxM6oEurE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/photos/search-photo-by-name/Ảnh",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"photos",
+						"search-photo-by-name",
+						"Ảnh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"full_name\": \"Cao Sơn\",\r\n    \"email\": \"caosn@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"age\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/auth/sign-up",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"auth",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"1234\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/auth/login",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Reset Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJGb1h3N3giLCJpYXQiOjE3MTY5MTM5ODEsImV4cCI6MTcxNjkxNDI4MX0.N7k8o4NVx-Dyu3blx8DG_EAcOo5Y9l9EQhc2dKWkacs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/auth/reset-token",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"auth",
+						"reset-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Upload Avatar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJrZXkiOiJEWjZjZG8iLCJpYXQiOjE3MTYyODc5NjQsImV4cCI6MTcxNjI4ODI2NH0.oPkSXcyublDPM0TnvFXR_GoLt-q5BH6t02C6nzlkAJM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/Caosonnw/Pictures/Saved Pictures/T1.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/user/upload-avatar",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"upload-avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Upload Photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJMWW9zb1YiLCJpYXQiOjE3MTYyOTI0ODYsImV4cCI6MTcxNjI5Mjc4Nn0.5dV4v4ZDThHSRWf7ByismcW8LzIpjcJAJm1-U5JCaWI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photos",
+							"type": "file",
+							"src": "/C:/Users/Caosonnw/Pictures/Saved Pictures/51944273382_7a68ab7bcf_o.jpg"
+						},
+						{
+							"key": "photo_name",
+							"value": "Ảnh 1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Hehehehe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/photos/upload-photo",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"photos",
+						"upload-photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJNQ3Zhc2giLCJpYXQiOjE3MTYyOTA0NTAsImV4cCI6MTcxNjI5MDc1MH0.ONni0bzKO6LUc3aasrxS5WZ_S-GcbND_gnTx0ho8RVY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\": 24\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/update-user",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"update-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Create Comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJYazN1cHoiLCJpYXQiOjE3MTYyOTcyNTgsImV4cCI6MTcxNjI5NzU1OH0.C6mE2dVsos0NmkJKZsrbdtcv3u_EoMIBqJVKV1zgqVI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Tuyệt vời\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/comment/create-comment/2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"comment",
+						"create-comment",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Get Comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJ3QkRRUDkiLCJpYXQiOjE3MTYyOTc2MzEsImV4cCI6MTcxNjI5NzkzMX0.9kxDJax3ZGXkZGl9tKLZZiFl5xhZPTQ3eOVz5UDHA10",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/comment/get-comment/2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"comment",
+						"get-comment",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Save Photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJWM1QzVXgiLCJpYXQiOjE3MTYyOTc5OTQsImV4cCI6MTcxNjI5ODI5NH0.xXvcTQ08T9q_POnrWqJCwlrsxmi1HdcEpFeeRv1l-84",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/photos/save-photo/1",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"photos",
+						"save-photo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Get Saved Photo By User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJCcWhhdmoiLCJpYXQiOjE3MTYyOTgyMDksImV4cCI6MTcxNjI5ODUwOX0.ydhhvvBpbV-jE99CUgHb75eiFMVvWdP0AgXnbeKLQWQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/photos/get-saved-photos-by-user",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"photos",
+						"get-saved-photos-by-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Get Photos By User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJFWU5vRjciLCJpYXQiOjE3MTYyOTkzNDQsImV4cCI6MTcxNjI5OTY0NH0.b9R95kxzK0AV8nRIo62PlZhvGgeu6MwjfgJW8tMgw4k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/photos/get-photos-by-user",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"photos",
+						"get-photos-by-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Delete Photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJFWU5vRjciLCJpYXQiOjE3MTYyOTkzNDQsImV4cCI6MTcxNjI5OTY0NH0.b9R95kxzK0AV8nRIo62PlZhvGgeu6MwjfgJW8tMgw4k",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/photos/delete-photo/1",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"photos",
+						"delete-photo",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Get Info Saved Photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJrZXkiOiJIS2tqWU4iLCJpYXQiOjE3MTYyOTk3MTgsImV4cCI6MTcxNjMwMDAxOH0.-IVVjrcMdQxLNDF6CPeoBy6RPL9cd8FlQJZOXddYGqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/photos/get-info-saved-photo/2",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"photos",
+						"get-info-saved-photo",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
